@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-MYCLIP=`xclip -o -selection c`
+MYCLIP=$(realpath -q "$(xclip -o -selection c)")
 
-if [ -a "$MYCLIP" ]; then
+if [ -e "$MYCLIP" ]; then
     $1 $MYCLIP
 else
     ${2:-$1}
