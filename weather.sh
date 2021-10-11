@@ -2,7 +2,7 @@
 
 # Globals
 
-DEFAULTZIPFILE=$(dirname $0)/.weather_zip_default
+DEFAULTZIPFILE="$(dirname "$(readlink -f "$(realpath "$0")")")/.weather_zip_default"
 
 if [ -f "$DEFAULTZIPFILE" ]
 then ZIPCODE=$(cat "$DEFAULTZIPFILE")
