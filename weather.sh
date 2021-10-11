@@ -2,7 +2,14 @@
 
 # Globals
 
-ZIPCODE=46556
+DEFAULTZIPFILE=$(dirname $0)/.weather_zip_default
+
+if [ -f "$DEFAULTZIPFILE" ]
+then ZIPCODE=$(cat "$DEFAULTZIPFILE")
+else read -p "Default zipcode: " ZIPCODE
+     echo "$ZIPCODE" > "$DEFAULTZIPFILE"
+fi
+
 CELSIUS=0
 SEVENDAY=0
 
@@ -103,7 +110,8 @@ while [ $# -gt 0 ]; do
         -c) CELSIUS=1;;
         -h) usage 0;;
         -7) SEVENDAY=1;;
-        [0-9][0-9][0-9][0-9][0-9]) ZIPCODE=$1;;
+        [0-9][0-9][0-9][0-9][0-9]) ZIPCODE=$1;
+                                   echo "$ZIPCODE" > "$DEFAULTZIPFILE";;
          *) usage 0;;
     esac
     shift
