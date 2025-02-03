@@ -52,3 +52,6 @@ include "%L"
 <Multi_key> <g> <w>			: "ω"	U03C9 # GREEK SMALL LETTER OMEGA
 <Multi_key> <bar> <greater>		: "⊳"	U22B3 # CONTAINS AS NORMAL SUBGROUP
 <Multi_key> <less> <bar>		: "⊲"	U22B2 # NORMAL SUBGROUP OF
+<Multi_key> <less> <equal>		: "≤"	U2264 # LESS-THAN OR EQUAL TO
+<Multi_key> <greater> <equal>		: "≥"	U2265 # GREATER-THAN OR EQUAL TO
+<Multi_key> <v> <slash>			: "√"	U221A # SQUARE ROOT
