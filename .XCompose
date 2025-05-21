@@ -127,6 +127,7 @@ include "%L"
 <Multi_key> <equal> <equal>			: "≡"	U2261	# IDENTICAL TO
 <Multi_key> <o> <x>				: "⊗"	U2297	# CIRCLED TIMES
 <Multi_key> <o> <plus>				: "⊕"	U2295	# CIRCLED PLUS
+<Multi_key> <minus> <0>				: "⊸"	U22B8	# MULTIMAP
 <Multi_key> <plus> <greater>			: "↦"	U21A6	# RIGHTWARDS ARROW FROM BAR
 <Multi_key> <greater> <plus>			: "↦"	U21A6	# RIGHTWARDS ARROW FROM BAR
 <Multi_key> <less> <plus>			: "↤"	U21A4	# LEFTWARDS ARROW FROM BAR
@@ -157,6 +158,25 @@ include "%L"
 <Multi_key> <bar> <bar>				: "∥"	U2225	# PARALLEL TO
 <Multi_key> <parenleft> <bar>			: "⦇"	U2987   # Z NOTATION LEFT IMAGE BRACKET
 <Multi_key> <bar> <parenright>			: "⦈"   U2988	# Z NOTATION RIGHT IMAGE BRACKET
+<Multi_key> <backslash> <slash>			: "∀"	U2200	# FOR ALL
+<Multi_key> <f> <a>				: "∀"	U2200	# FOR ALL
+<Multi_key> <e> <x>				: "∃"	U2203	# THERE EXISTS
+<Multi_key> <bar> <plus>			: "†"	U2020	# DAGGER
+<Multi_key> <bar> <plus> <plus>			: "‡"	U2021	# DOUBLE DAGGER
+<Multi_key> <bar> <minus>			: "⊢"	U22A2	# RIGHT TACK
+<Multi_key> <bar> <slash> <minus>		: "⊬"	U22AC	# DOES NOT PROVE
+<Multi_key> <minus> <bar>			: "⊣"	U22A3	# LEFT TACK
+<Multi_key> <T> <T>				: "⊤"	U22A4	# DOWN TACK
+<Multi_key> <bar> <underscore>			: "⊥"	U22A5	# UP TACK
+<Multi_key> <underscore> <bar>			: "⊥"	U22A5	# UP TACK
+<Multi_key> <bar> <equal>			: "⊨"	U22A8	# TRUE
+<Multi_key> <bar> <slash> <equal>		: "⊭"	U22AD   # NOT TRUE
+<Multi_key> <equal> <bar>			: "⫤"	U2AE4	# VERTICAL BAR DOUBLE LEFT TURNSTILE
+<Multi_key> <T> <T> <T>				: "⫪"	U2AEA	# DOUBLE DOWN TACK
+<Multi_key> <underscore> <bar> <bar>		: "⫫"	U2AEB	# DOUBLE UP TACK
+#<Multi_key> <slash> <o>				: "∅"	U2205	# EMPTY SET
+#<Multi_key> <o> <slash>				: "∅"	U2205	# EMPTY SET
+
 #<Multi_key> <b> <a>			: Left # LEFTARROW
 #<Multi_key> <Left> <Left>		: "←"	leftarrow	# LEFTWARDS ARROW
 #<Multi_key> <Up> <Up>			: "↑"	uparrow		# UPWARDS ARROW
