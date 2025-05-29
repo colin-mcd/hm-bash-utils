@@ -6,7 +6,9 @@
 SCRIPT_PATH=$(realpath "${BASH_SOURCE[0]}")
 SCRIPT_DIR=$(cd -- "$( dirname -- "${SCRIPT_PATH}" )" &> /dev/null && pwd)
 
-DEVICES="/dev/input/by-id/usb-BY_Tech_Air75-event-kbd /dev/input/by-path/platform-i8042-serio-0-event-kbd"
+#DEVICES="/dev/input/by-id/usb-BY_Tech_Air75-event-kbd /dev/input/by-path/platform-i8042-serio-0-event-kbd"
+# Fetch all keyboard devices, expand symlinks, and deduplicate
+DEVICES=$(for fp in /dev/input/by-path/*-kbd; do realpath $fp; done | tr " " "\n" | sort -u)
 
 function handler() {
     # if you ever need to find the kmonad procs,
