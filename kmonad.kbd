@@ -21,13 +21,16 @@
 |#
 
 (defalias
-  ema (layer-toggle emacsctl)
+  eml (layer-toggle emacsctl)
   msl (cmd-button "ydotool mousemove -x -100 -y    0")
   msr (cmd-button "ydotool mousemove -x  100 -y    0")
   msu (cmd-button "ydotool mousemove -x    0 -y -100")
   msd (cmd-button "ydotool mousemove -x    0 -y  100")
   pck (cmd-button "~/bin/colorpicker.sh --hex") ;; Write out picked color
-;;  tst (cmd-button "echo hello world > /tmp/kmonad_path.txt") ;; Write out hello world
+  ema (cmd-button "~/bin/runwithclip emacs")
+  nau (cmd-button "~/bin/runwithclip nautilus")
+  cal (cmd-button "gnome-calculator")
+  www (cmd-button "sensible-browser")
 )
 
 (defsrc ;; some of these fn-f keys might not work...
@@ -47,7 +50,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   lctl _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _         _
-  @ema _    _    _              _                   _    _    _    _    _
+  @eml _    _    _              _                   _    _    _    _    _
 )
 
 ;; Must have mouse keys accessibility setting turned on
@@ -55,9 +58,9 @@
 (deflayer emacsctl
        _    _    _    @pck @pck
   _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    end  _    _    _    _    _    _    up   _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    @cal _
+  _    _    @www end  @nau _    _    _    _    _    up   _    _    _
   _    home _    del  rght esc  kp4  kp2  kp8  kp6  _    _    kp5
-  _    _    _    _    _    left down _    _    _    _    _         _
+  _    _    _    _    _    left down @ema _    _    _    _         _
   _    _    _    _              _                   _    _    _    _    _
 )
