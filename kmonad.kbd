@@ -22,14 +22,18 @@
 
 (defalias
   ema (layer-toggle emacsctl)
+  ilt KeyKbdIllumToggle
+  prn print
   msl (cmd-button "ydotool mousemove -x -100 -y    0")
   msr (cmd-button "ydotool mousemove -x  100 -y    0")
   msu (cmd-button "ydotool mousemove -x    0 -y -100")
   msd (cmd-button "ydotool mousemove -x    0 -y  100")
+  pck (cmd-button "~/bin/colorpicker.sh --hex") ;; Write out picked color
 ;;  tst (cmd-button "echo hello world > /tmp/kmonad_path.txt") ;; Write out hello world
 )
 
-(defsrc
+(defsrc ;; some of these fn-f keys might not work...
+       mute vold volu pp   KeyKbdIllumToggle blup brup           ssrq print home end
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  ins  del
   `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
@@ -39,6 +43,7 @@
 )
 
 (deflayer base
+       _    _    _    _    _    _    _              _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -50,6 +55,7 @@
 ;; Must have mouse keys accessibility setting turned on
 ;; gsettings set org.gnome.desktop.a11y.keyboard mousekeys-max-speed 20
 (deflayer emacsctl
+       a    b    c    d    e    f    g              @pck @pck _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    end  _    _    _    _    _    _    up   _    _    _
