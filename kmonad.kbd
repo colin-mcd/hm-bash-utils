@@ -8,7 +8,7 @@
   ;;cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
   ;;key-seq-delay 5 ;; 5ms delay between each outputted key event
   fallthrough true
-  allow-cmd false
+  allow-cmd true
 )
 
 #| --------------------------  Layer Template  -----------------------------
@@ -22,6 +22,10 @@
 
 (defalias
   ema (layer-toggle emacsctl)
+  msl (cmd-button "ydotool mousemove -x -100 -y    0")
+  msr (cmd-button "ydotool mousemove -x  100 -y    0")
+  msu (cmd-button "ydotool mousemove -x    0 -y -100")
+  msd (cmd-button "ydotool mousemove -x    0 -y  100")
 ;;  tst (cmd-button "echo hello world > /tmp/kmonad_path.txt") ;; Write out hello world
 )
 
@@ -43,11 +47,13 @@
   @ema _    _    _              _                   _    _    _    _    _
 )
 
+;; Must have mouse keys accessibility setting turned on
+;; gsettings set org.gnome.desktop.a11y.keyboard mousekeys-max-speed 20
 (deflayer emacsctl
   _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    end  _    _    _    _    _    _    up   _    _    _
-  _    home _    del  rght esc  _    _    _    _    _    _    _
+  _    home _    del  rght esc  kp4  kp2  kp8  kp6  _    _    kp5
   _    _    _    _    _    left down _    _    _    _    _         _
   _    _    _    _              _                   _    _    _    _    _
 )

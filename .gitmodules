@@ -1,0 +1,3 @@
+[submodule "ydotool"]
+	path = ydotool
+	url = git@github.com:ReimuNotMoe/ydotool.git

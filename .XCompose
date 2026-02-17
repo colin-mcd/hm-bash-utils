@@ -122,6 +122,12 @@ include "%L"
 # More potential symbols:
 # https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode
 # https://en.wikipedia.org/wiki/Bracket#Unicode
+<Multi_key> <e> <l>				: "∈"	U2208	# ELEMENT OF
+<Multi_key> <n> <e> <l>				: "∉"	U2209	# NOT AN ELEMENT OF
+<Multi_key> <m> <e> <m>				: "∋"	U220B	# CONTAINS AS MEMBER
+<Multi_key> <n> <m> <e> <m>			: "∌"	U220C	# DOES NOT CONTAIN AS MEMBER
+<Multi_key> <d> <n>				: "∩"	U2229	# INTERSECTION
+<Multi_key> <u> <p>				: "∪"	U222A	# UNION
 <Multi_key> <bar> <greater>			: "⊳"	U22B3	# CONTAINS AS NORMAL SUBGROUP
 <Multi_key> <less> <bar>			: "⊲"	U22B2	# NORMAL SUBGROUP OF
 <Multi_key> <equal> <equal>			: "≡"	U2261	# IDENTICAL TO
@@ -155,7 +161,8 @@ include "%L"
 <Multi_key> <v> <bracketleft>			: "⌊"	U230A	# LEFT FLOOR
 <Multi_key> <bracketright> <v>			: "⌋"	U230B	# RIGHT FLOOR
 <Multi_key> <v> <bracketright>			: "⌋"	U230B	# RIGHT FLOOR
-<Multi_key> <bar> <bar>				: "∥"	U2225	# PARALLEL TO
+#<Multi_key> <bar> <bar>				: "∥"	U2225	# PARALLEL TO
+<Multi_key> <bar> <bar>				: "ǁ"	U01C1	# LATIN LETTER LATERAL CLICK
 <Multi_key> <parenleft> <bar>			: "⦇"	U2987   # Z NOTATION LEFT IMAGE BRACKET
 <Multi_key> <bar> <parenright>			: "⦈"   U2988	# Z NOTATION RIGHT IMAGE BRACKET
 <Multi_key> <backslash> <slash>			: "∀"	U2200	# FOR ALL
@@ -174,9 +181,13 @@ include "%L"
 <Multi_key> <equal> <bar>			: "⫤"	U2AE4	# VERTICAL BAR DOUBLE LEFT TURNSTILE
 <Multi_key> <T> <T> <T>				: "⫪"	U2AEA	# DOUBLE DOWN TACK
 <Multi_key> <underscore> <bar> <bar>		: "⫫"	U2AEB	# DOUBLE UP TACK
+<Multi_key> <slash> <slash>			: "⁄"	U2044	# FRACTION SLASH
+<Multi_key> <slash> <minus>			: "↼"	U21BC	# LEFTWARDS HARPOON WITH BARB UPWARDS
+<Multi_key> <minus> <backslash>			: "⇀"	U21C0	# RIGHTWARDS HARPOON WITH BARB UPWARDS
+<Multi_key> <backslash> <minus>			: "↽"	U21BD	# LEFTWARDS HARPOON WITH BARB DOWNWARDS
+<Multi_key> <minus> <slash>			: "⇁"	U21C1	# RIGHTWARDS HARPOON WITH BARB DOWNWARDS
 #<Multi_key> <slash> <o>				: "∅"	U2205	# EMPTY SET
 #<Multi_key> <o> <slash>				: "∅"	U2205	# EMPTY SET
-
 #<Multi_key> <b> <a>			: Left # LEFTARROW
 #<Multi_key> <Left> <Left>		: "←"	leftarrow	# LEFTWARDS ARROW
 #<Multi_key> <Up> <Up>			: "↑"	uparrow		# UPWARDS ARROW
