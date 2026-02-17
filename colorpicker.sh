@@ -23,6 +23,8 @@ if [ $# -ge 1 ]; then
     esac
 fi
 
+set -e
+
 # from https://unix.stackexchange.com/a/724963
 colormsg=$(gdbus call --session --dest org.gnome.Shell.Screenshot --object-path /org/gnome/Shell/Screenshot --method org.gnome.Shell.Screenshot.PickColor)
 ##drop first 13 and last 5 characters: ({'color': <(...)>},)
