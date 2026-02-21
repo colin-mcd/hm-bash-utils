@@ -26,11 +26,11 @@
   msr (cmd-button "ydotool mousemove -x  100 -y    0")
   msu (cmd-button "ydotool mousemove -x    0 -y -100")
   msd (cmd-button "ydotool mousemove -x    0 -y  100")
-  pck (cmd-button "~/bin/colorpicker.sh --hex") ;; Write out picked color
-  ema (cmd-button "~/bin/runwithclip emacs")
-  nau (cmd-button "~/bin/runwithclip nautilus")
-  cal (cmd-button "gnome-calculator")
-  www (cmd-button "sensible-browser")
+  pck (cmd-button "nohup-quiet colorpicker --hex --stdout") ;; Write out picked color
+  ema (cmd-button "nohup-quiet runwithclip emacs")
+  nau (cmd-button "nohup-quiet runwithclip nautilus")
+  cal (cmd-button "nohup-quiet gnome-calculator")
+  www (cmd-button "nohup-quiet sensible-browser")
 )
 
 (defsrc ;; some of these fn-f keys might not work...

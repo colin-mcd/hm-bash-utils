@@ -13,15 +13,19 @@ EOF
 
 COLOR_FORMAT="hex"
 FP_PRECISION=6
+COPY_OR_STDOUT="stdout"
 
-if [ $# -ge 1 ]; then
+while [ $# -gt 0 ]; do
     case $1 in
         --hex|--rgb|--fp) COLOR_FORMAT=$(echo $1 | cut -c 3-);;
         --fp=*) COLOR_FORMAT="fp"; FP_PRECISION=$(echo $1 | cut -c 6-);;
+        --copy) COPY_OR_STDOUT="copy";;
+        --stdout) COPY_OR_STDOUT="stdout";;
         -h | --help) usage 0;;
          *) usage 1;;
-    esac
-fi
+    esac;
+    shift
+done
 
 set -e
 
@@ -43,7 +47,13 @@ for ((i = 0; i < ${#colors[@]}; i++)); do
     esac
 done
 
-echo -n "${colors[0]}${SPACING}${colors[1]}${SPACING}${colors[2]}" | wl-copy
+if [[ "$COPY_OR_STDOUT" == "copy" ]]; then
+    echo -n "${colors[0]}${SPACING}${colors[1]}${SPACING}${colors[2]}" | wl-copy
+elif [[ "$COPY_OR_STDOUT" == "stdout" ]]; then
+    echo -n "${colors[0]}${SPACING}${colors[1]}${SPACING}${colors[2]}" | ydotool type --file -
+else
+    usage 1
+fi
 # echo   "RGB: ${colors[0]} ${colors[1]} ${colors[2]}"
 # printf "HEX: %02x%02x%02x\n" "${colors[0]}" "${colors[1]}" "${colors[2]}"
 #echo "$colors"
