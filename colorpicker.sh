@@ -50,7 +50,7 @@ done
 if [[ "$COPY_OR_STDOUT" == "copy" ]]; then
     echo -n "${colors[0]}${SPACING}${colors[1]}${SPACING}${colors[2]}" | wl-copy
 elif [[ "$COPY_OR_STDOUT" == "stdout" ]]; then
-    echo -n "${colors[0]}${SPACING}${colors[1]}${SPACING}${colors[2]}" | ydotool type --file -
+    echo -n "${colors[0]}${SPACING}${colors[1]}${SPACING}${colors[2]}" | ydotool type --key-delay=0 --key-hold=0 --next-delay=0 --file -
 else
     usage 1
 fi
