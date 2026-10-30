@@ -1,0 +1,11 @@
+# Tell start-kmonad.sh to restart kmonad when a keyboard connects.
+# If start-kmonad.sh isn't running, nothing matches and nothing happens.
+# Install to /etc/udev/rules.d/90-kmonad-restart.rules (see start-kmonad.sh).
+#
+# /devices/virtual/input is skipped because that's where uinput devices live,
+# including kmonad's own output keyboard, which would otherwise restart kmonad
+# in a loop. Bluetooth LE keyboards are under /devices/virtual/misc/uhid, so
+# they still match.
+ACTION=="add", SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_KEYBOARD}=="1", \
+  DEVPATH!="/devices/virtual/input/*", \
+  RUN+="/usr/bin/pkill -HUP -f '^bash .*start-kmonad.sh'"
